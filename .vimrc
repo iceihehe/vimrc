@@ -8,6 +8,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'L9'
 Plugin 'Shougo/neocomplete'
 Plugin 'kien/ctrlp.vim'
+Plugin 'tomasr/molokai'
 call vundle#end()
 filetype plugin indent on
 "
