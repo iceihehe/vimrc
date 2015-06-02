@@ -9,6 +9,7 @@ Plugin 'L9'
 Plugin 'Shougo/neocomplete'
 Plugin 'kien/ctrlp.vim'
 Plugin 'ciaranm/inkpot'
+Plugin 'scrooloose/syntastic'
 call vundle#end()
 filetype plugin indent on
 "
@@ -81,3 +82,14 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+"
+" syntastic
+"
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
