@@ -80,7 +80,7 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "
 " ctrlp
 "
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "
 "syntastic
@@ -95,13 +95,8 @@ let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0   
 
 " 定义函数AutoSetFileHead，自动插入文件头
-autocmd BufNewFile *.sh,*.py exec ":call AutoSetFileHead()"
+autocmd BufNewFile *.py exec ":call AutoSetFileHead()"
 function! AutoSetFileHead()
-    "如果文件类型为.sh文件
-    if &filetype == 'sh'
-        call setline(1, "\#!/bin/bash")
-    endif
-
     "如果文件类型为python
     if &filetype == 'python'
         call setline(1, "# -*- coding=utf-8 -*-")
@@ -109,14 +104,6 @@ function! AutoSetFileHead()
         call append(2, "# File Name: ".expand("%"))
         call append(3, "")
         call append(4, "from __future__ import print_function, unicode_literals")
-    else
-        call setline(1, "/*************************************************************************")
-        call append(line("."), "    > File Name: ".expand("%"))
-        call append(line(".")+1, "  > Author: bwhite")
-        call append(line(".")+2, "  > Mail: b__white@163.com ")
-        call append(line(".")+3, "  > Created Time: ".strftime("%c"))
-        call append(line(".")+4, " ************************************************************************/")
-        call append(line(".")+5, "")
     endif
 
     normal G
