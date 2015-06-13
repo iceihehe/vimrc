@@ -1,6 +1,7 @@
 # vimrc
 my .vimrc
 
+git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim #先安装vundle
 
 git clone https://github.com/iceihehe/vimrc #down项目
 
