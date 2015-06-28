@@ -29,6 +29,7 @@ set number
 set cursorline  " 突出显示当前行
 set cursorcolumn    " 高亮光标列
 set hlsearch    " 高亮显示搜索结果
+set incsearch   " 同步搜索
 
 colorscheme inkpot
 let g:rehash256 = 1
