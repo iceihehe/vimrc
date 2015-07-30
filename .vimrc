@@ -7,7 +7,8 @@ Plugin 'bling/vim-airline'
 Plugin 'L9'
 Plugin 'Shougo/neocomplete'
 Plugin 'kien/ctrlp.vim'
-Plugin 'ciaranm/inkpot'
+" Plugin 'ciaranm/inkpot'
+Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'scrooloose/syntastic'
 call vundle#end()
 filetype plugin indent on
@@ -31,7 +32,8 @@ set cursorcolumn    " 高亮光标列
 set hlsearch    " 高亮显示搜索结果
 set incsearch   " 同步搜索
 
-colorscheme inkpot
+" colorscheme inkpot
+colorscheme Tomorrow-Night
 let g:rehash256 = 1
 "
 " vim-airline
