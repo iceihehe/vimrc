@@ -1,4 +1,4 @@
-set nocompatible
+set nocompatible    " 关闭Vi兼容模式
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -28,21 +28,23 @@ scriptencoding utf-8
 set encoding=utf-8
 set listchars=tab:▸\
 
-set number
+set number      " 显示行号
 set cursorline  " 突出显示当前行
 set cursorcolumn    " 高亮光标列
 set hlsearch    " 高亮显示搜索结果
 set incsearch   " 同步搜索
+set nobackup    " 不生成备份文件
+set noswapfile  " 不生成交换文件
+set encoding=utf-8
+set t_Co=256
+set laststatus=2    " 开启状态栏信息
+let g:rehash256 = 1 " 配色高亮
 
 " colorscheme inkpot
 colorscheme Tomorrow-Night
-let g:rehash256 = 1
 "
 " vim-airline
 "
-set encoding=utf-8
-set t_Co=256
-set laststatus=2
 let g:airline#extensions#tabline#enabled = 1
 "
 " neocomplete
