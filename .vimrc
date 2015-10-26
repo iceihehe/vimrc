@@ -105,11 +105,8 @@ autocmd BufNewFile *.py exec ":call AutoSetFileHead()"
 function! AutoSetFileHead()
     "如果文件类型为python
     if &filetype == 'python'
-        call setline(1, "# -*- coding=utf-8 -*-")
-        call append(1, "# Created Time: ".strftime("%c"))
-        call append(2, "# File Name: ".expand("%"))
-        call append(3, "")
-        call append(4, "from __future__ import print_function")
+        call setline(1, "#!/usr/bin/env python")
+        call append(1, "# -*- coding=utf-8 -*-")
     endif
 
     normal G
