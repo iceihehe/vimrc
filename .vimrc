@@ -7,7 +7,6 @@ Plugin 'bling/vim-airline'
 Plugin 'L9'
 Plugin 'Shougo/neocomplete'
 Plugin 'kien/ctrlp.vim'
-" Plugin 'ciaranm/inkpot'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
 Plugin 'scrooloose/syntastic'
 call vundle#end()
@@ -106,7 +105,7 @@ function! AutoSetFileHead()
     "如果文件类型为python
     if &filetype == 'python'
         call setline(1, "#!/usr/bin/env python")
-        call append(1, "# -*- coding=utf-8 -*-")
+        call append(1, "# -*- coding: utf-8 -*-")
     endif
 
     normal G
