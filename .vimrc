@@ -4,7 +4,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
-Plugin 'L9'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
 Plugin 'chriskempson/tomorrow-theme', {'rtp': 'vim/'}
@@ -37,6 +36,7 @@ set noswapfile  " 不生成交换文件
 set encoding=utf-8
 set t_Co=256
 set laststatus=2    " 开启状态栏信息
+set completeopt-=preview    " 去掉preview窗口
 let g:rehash256 = 1 " 配色高亮
 
 " colorscheme
