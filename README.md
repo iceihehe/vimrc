@@ -13,5 +13,7 @@ rm -rvf vimrc #删掉git项目
 
 进入vim  :PluginInstall
 
+YouCompleteMe需要编译安装, 可以进入~/.vimrc/bundle/YouCompleteMe目录用./install.py --help查看细节
+
 完成
 
