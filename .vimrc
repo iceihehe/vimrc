@@ -2,7 +2,6 @@ set nocompatible    " 关闭Vi兼容模式
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-Plugin 'gmarik/Vundle.vim'
 Plugin 'bling/vim-airline'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'kien/ctrlp.vim'
@@ -25,21 +24,22 @@ set list
 scriptencoding utf-8
 set encoding=utf-8
 set listchars=tab:▸\
-
+"
 set number      " 显示行号
 set cursorline  " 突出显示当前行
 set cursorcolumn    " 高亮光标列
 set hlsearch    " 高亮显示搜索结果
 set incsearch   " 同步搜索
 set nobackup    " 不生成备份文件
-set noswapfile  " 不生成交换文件
+"set noswapfile  " 不生成交换文件
 set encoding=utf-8
 set t_Co=256
 set laststatus=2    " 开启状态栏信息
 set completeopt-=preview    " 去掉preview窗口
 let g:rehash256 = 1 " 配色高亮
-
+"
 " colorscheme
+"
 colorscheme Tomorrow-Night
 "
 " vim-airline
@@ -51,18 +51,26 @@ let g:airline#extensions#tabline#enabled = 1
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.pyc
 let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
 "
-"syntastic
+" syntastic
 "
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+let g:syntastic_python_checkers=['pyflakes', 'pep8']
+let g:syntastic_python_pep8_args='--ignore=E501,E225,E124,E712'
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 2
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0   
-
+"
+" YouCompleteMe
+"
+let g:ycm_complete_in_strings = 1   "在字符串输入中也能补全
+let g:ycm_collect_identifiers_from_comments_and_strings = 1     "注释和字符串中的文字也会被收入补全
+"
 " 定义函数AutoSetFileHead，自动插入文件头
+"
 autocmd BufNewFile *.py exec ":call AutoSetFileHead()"
 function! AutoSetFileHead()
     "如果文件类型为python
@@ -76,4 +84,3 @@ function! AutoSetFileHead()
     normal o
     normal o
 endfunc
-
